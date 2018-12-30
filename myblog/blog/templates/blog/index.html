@@ -5,6 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-<h1>{{hello}}</h1>
+<h1>
+    <a href="{% url 'blog:edit_page' 0 %}">Add a new article</a>
+</h1>
+<h1>All my articles</h1>
+    {% for article in articles %}
+        <a href="{% url 'blog:article_page' article.id %}">{{article.title}}</a>
+        <br>
+        <br>
+    {% endfor %}
+
+
 </body>
 </html>
